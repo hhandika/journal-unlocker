@@ -1,10 +1,19 @@
+import os
+
 from configparser import SafeConfigParser
 
 from configs import conf_writer
 
+def get_root_dir():
+    return os.path.dirname(os.path.abspath(__file__))
+
+def get_settings():
+    ROOT_DIR = get_root_dir()
+    return ROOT_DIR + '/' + 'settings.conf'
+
 def read_lib_url():
     parser = SafeConfigParser()
-    parser.read('configs/settings.conf')
+    parser.read(get_settings())
     return parser.get('Settings', 'libs')
 
 def write_user_input(conf):

@@ -1,14 +1,13 @@
 import os
 
+from configs import conf_reader
+
 class ConfigWriter:
     def __init__(self, lib_url):
         self.lib_url = lib_url
-    
-    def _get_root_path(self):
-        return os.path.dirname(os.path.abspath(__file__))
 
     def _get_settings(self):
-        ROOT_DIR = self._get_root_path()
+        ROOT_DIR = conf_reader.get_root_path()
         fname = ROOT_DIR + '/' + 'settings.conf'
         url = 'libs = ' + self.lib_url
         return fname, url
