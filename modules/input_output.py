@@ -6,6 +6,12 @@ class UserInput(converter.LinkConverter):
     def __init__(self, libs, url):
         self.libs = libs
         self.url = url
+    
+    def _invalid_input(self):
+        print(f"\x1b[0;31mERROR: \x1b[0m{self.url} is invalid URL\n")
+        print("Please, enter a valid url or doi name.")
+        print("The url should start with 'http'")
+        print("If it is a doi name, the prefix should start with '10.'")
 
     def _convert_doi(self):
         doi = 'https://doi.org/'
@@ -23,10 +29,8 @@ class UserInput(converter.LinkConverter):
         elif self.url.startswith('http'):
             self._convert_http()
         else:
-            print("ERROR: Invalid URL")
-            print("Please, enter a valid url or doi name.")
-            print("The url should start with 'http'")
-            print("if it is a doi name, the prefix should start with '10.'")
+            self._invalid_input()
+            exit()
         
     def _is_empty_input(self):
         self.url = input("Enter url/doi:")
