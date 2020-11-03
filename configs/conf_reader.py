@@ -25,7 +25,7 @@ def get_lib_url():
         lib_url = read_lib_url()
         return lib_url
     except:
-        print('Error reading config file')
+        print('Cannot find a config file')
         print('Add config file')
         conf = input("Enter library address:")
         write_user_input(conf)
