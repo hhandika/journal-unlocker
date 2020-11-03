@@ -8,7 +8,7 @@ setup(
     include_package_data=True,
     py_modules=find_packages(),
     install_requires=[
-        'Click', 'requests',
+        'Click'
     ],
     entry_points='''
         [console_scripts]
