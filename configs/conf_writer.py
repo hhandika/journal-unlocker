@@ -20,4 +20,4 @@ class ConfigWriter:
         f.write(url)
         f.close()
         print('You are set!')
-        print(f"A config file is written in {fname}")
+        print(f"A config file is written in {fname}\n")

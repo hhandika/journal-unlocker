@@ -22,6 +22,6 @@ def main(url, set):
         write_lib = conf_writer.ConfigWriter(set)
         write_lib.write_settings()
     else:
-        libs = conf_reader.read_lib_address()
+        libs = conf_reader.get_lib_url()
         ui = input_output.UserInput(libs, url)
         ui.check_user_input()
