@@ -1,6 +1,8 @@
 
 import click
+import configparser
 
+from configs import conf_parser
 from modules import input_output
 
 @click.command()
@@ -14,6 +16,6 @@ def main(url):
     Returns:
         [type]: [description]
     """
-    libs = 'libezp.lib.lsu.edu'
+    libs = conf_parser.get_lib_address()
     ui = input_output.UserInput(libs, url)
     ui.check_user_input()
