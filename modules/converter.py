@@ -26,13 +26,10 @@ class LinkConverter:
 
     def convert_url(self):
         if '.com' in self.url:
-            url = self._convert_com()
-            return url
+            return self._convert_com()
         elif '.org' in self.url:
-            url = self._convert_org()
-            return url
+            return self._convert_org()
         elif '.edu' in self.url:
-            url = self._convert_edu()
-            return url
+            return self._convert_edu()
         else:
             sys.exit(f'\x1b[0;31mERROR: \x1b[0mTHE URL IS NOT SUPPORTED') 
