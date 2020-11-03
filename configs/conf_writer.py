@@ -10,7 +10,7 @@ class ConfigWriter:
         return 'libs = ' + self.lib_url
 
     def write_settings(self):
-        fname = conf_reader.get_settings()
+        fname = conf_reader.read_settings()
         url = self._get_url()
         f = open(fname, 'a')
         f.write('[Settings]\n')
