@@ -2,12 +2,14 @@
 import click
 import configparser
 
-from configs import conf_parser
+from configs import conf_reader
+from configs import conf_writer
 from modules import input_output
 
 @click.command()
 @click.option('--url','-u', help='Add a url, doi link, or doi name.')
-def main(url):
+@click.option('--set', default=None, help='Set library url.')
+def main(url, set):
     """[summary]
 
     Args:
@@ -16,6 +18,10 @@ def main(url):
     Returns:
         [type]: [description]
     """
-    libs = conf_parser.get_lib_address()
-    ui = input_output.UserInput(libs, url)
-    ui.check_user_input()
+    if set is not None:
+        write_lib = conf_writer.ConfigWriter(set)
+        write_lib.write_settings()
+    else:
+        libs = conf_reader.read_lib_address()
+        ui = input_output.UserInput(libs, url)
+        ui.check_user_input()
