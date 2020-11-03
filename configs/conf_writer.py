@@ -7,7 +7,7 @@ class ConfigWriter:
         self.lib_url = lib_url
 
     def _get_settings(self):
-        ROOT_DIR = conf_reader.get_root_path()
+        ROOT_DIR = conf_reader.get_root_dir()
         fname = ROOT_DIR + '/' + 'settings.conf'
         url = 'libs = ' + self.lib_url
         return fname, url
