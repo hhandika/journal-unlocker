@@ -17,4 +17,3 @@ def main(url):
     libs = 'libezp.lib.lsu.edu'
     ui = input_output.UserInput(libs, url)
     ui.check_user_input()
-        

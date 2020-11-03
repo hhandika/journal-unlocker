@@ -1,4 +1,5 @@
 import webbrowser as wb
+
 from modules import converter
 
 class UserInput(converter.LinkConverter):
