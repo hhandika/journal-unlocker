@@ -19,8 +19,8 @@ def main(url, set):
         [type]: [description]
     """
     if set is not None:
-        write_lib = conf_writer.ConfigWriter(set)
-        write_lib.write_settings()
+        settings = conf_writer.ConfigWriter(set)
+        settings.write_settings()
     else:
         libs = conf_reader.get_lib_url()
         ui = input_output.UserInput(libs, url)
