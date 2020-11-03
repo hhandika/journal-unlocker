@@ -8,8 +8,8 @@ def get_root_dir():
     return os.path.dirname(os.path.abspath(__file__))
 
 def get_settings():
-    ROOT_DIR = get_root_dir()
-    return ROOT_DIR + '/' + 'settings.conf'
+    CONF_DIR = get_root_dir()
+    return CONF_DIR + '/' + 'settings.conf'
 
 def read_lib_url():
     parser = SafeConfigParser()

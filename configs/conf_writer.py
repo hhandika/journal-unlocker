@@ -6,14 +6,12 @@ class ConfigWriter:
     def __init__(self, lib_url):
         self.lib_url = lib_url
 
-    def _get_settings(self):
-        ROOT_DIR = conf_reader.get_root_dir()
-        fname = ROOT_DIR + '/' + 'settings.conf'
-        url = 'libs = ' + self.lib_url
-        return fname, url
+    def _get_url(self):
+        return 'libs = ' + self.lib_url
 
     def write_settings(self):
-        fname, url = self._get_settings()
+        fname = conf_reader.get_settings()
+        url = self._get_url()
         f = open(fname, 'a')
         f.write('[Settings]\n')
         f.write(url)
