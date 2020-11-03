@@ -1,7 +1,7 @@
 
 import click
 
-from modules import user_input
+from modules import input_output
 
 @click.command()
 @click.option('--url','-u', help='Add a url, doi link, or doi name.')
@@ -15,6 +15,6 @@ def main(url):
         [type]: [description]
     """
     libs = 'libezp.lib.lsu.edu'
-    ui = user_input.UserInput(libs, url)
+    ui = input_output.UserInput(libs, url)
     ui.check_user_input()
         
