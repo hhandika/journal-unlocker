@@ -5,26 +5,24 @@ class LinkConverter:
         self.url = url
         self.libs = libs
     
-    def _convert_com(self):
-        split_url = self.url.split('.com')
+    def _split_url(self, domain):
+        split_url = self.url.split(domain)
         first_part, second_part = split_url
         first_part = first_part.replace('.','-')
-        final_link = first_part + '-com.' + self.libs + second_part
-        return final_link
+        domain = domain.replace('.', '-')
+        return first_part + domain + '.' + self.libs + second_part
+    
+    def _convert_com(self):
+        domain = '.com'
+        return self._split_url(domain)
     
     def _convert_org(self):
-        split_url = self.url.split('.org')
-        first_part, second_part = split_url
-        first_part = first_part.replace('.','-')
-        final_link = first_part + '-org.' + self.libs + second_part
-        return final_link
+        domain = '.org'
+        return self._split_url(domain)
 
     def _convert_edu(self):
-        split_url = self.url.split('.edu')
-        first_part, second_part = split_url
-        first_part = first_part.replace('.','-')
-        final_link = first_part + '-edu.' + self.libs + second_part
-        return final_link
+        domain = '.edu'
+        return self._split_url(domain)
 
     def convert_url(self):
         if '.com' in self.url:
