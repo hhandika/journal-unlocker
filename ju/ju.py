@@ -1,6 +1,5 @@
 import click
 
-
 from configs import conf_reader
 from configs import conf_writer
 from modules import input_output

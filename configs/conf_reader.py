@@ -1,5 +1,4 @@
 import os
-
 from configparser import SafeConfigParser
 
 from configs import conf_writer
