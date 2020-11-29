@@ -10,7 +10,7 @@ class ConfigWriter:
     def write_settings(self):
         fname = conf_reader.read_settings()
         url = self._get_url()
-        f = open(fname, 'a')
+        f = open(fname, 'w')
         f.write('[Settings]\n')
         f.write(url)
         f.close()
